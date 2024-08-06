@@ -1,0 +1,10 @@
+---
+title: "About this site"
+format: html
+---
+
+My name is Ali Atif, a New jersey rising sophmore. Here's my email address ("halalman135@gmail.com") and my Github account link! [https://github.com/AliAtif09 ].
+
+this project is about the Olympics history regarding wins from 1896-2020. https://github.com/AliAtif09/olympic-historical-data.git
+
+This project was created as a part of Kane’s Data Science Bootcamp.  https://bootcamp.davidkane.info/

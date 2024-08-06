@@ -1,0 +1,41 @@
+---
+title: "Home"
+format: html
+---
+
+The whole world watches the Olympic games, and the winner of every game depends on the country's athletes.  However, Using this data, we can see which countries' athletes get more Olympic medals, and take the win home and we can see if the athlete previous medals, or age is the reason for that victory.
+
+
+```{r}
+
+#| label: setup
+#| message: false
+
+library(brms)
+
+data$country <- as.factor(data$country)
+
+formula <- country ~ gold + silver + bronze
+
+default_priors <- get_prior(formula, data = data, family = categorical())
+
+print(default_priors)
+
+model <- brm(
+  formula = formula,
+  data = data,
+  family = categorical(),  
+  prior = default_priors,
+  chains = 4,  
+  iter = 2000, 
+  warmup = 1000, 
+  cores = 2  
+)
+
+summary(model)
+
+plot(model)
+
+pp_check(model)
+```
+
